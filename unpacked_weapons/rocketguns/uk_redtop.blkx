@@ -5,59 +5,59 @@
   "shotFreq": 1000.25,
   "sound": "weapon.rocketgun_132",
   "helicopterGroup": 2,
-  "mesh": "us_aim_9e_sidewinder",
+  "mesh": "uk_redtop_rocket",
   "tags": [],
   "rocket": [
     {
       "bulletType": "aam"
     },
     {
-      "bulletName": "us_aim9e_sidewinder"
+      "bulletName": "uk_redtop_rocket"
     },
     {
-      "caliber": 0.127
+      "caliber": 0.23
     },
     {
-      "mass": 76.5
+      "mass": 167.0
     },
     {
       "explosiveType": "tnt"
     },
     {
-      "explosiveMass": 4.5
+      "explosiveMass": 31.0
     },
     {
-      "massEnd": 57.5
+      "massEnd": 105.0
     },
     {
       "maxDeltaAngle": 2.0
     },
     {
-      "dragCx": 0.018
+      "dragCx": 0.025
     },
     {
-      "length": 3.0
+      "length": 3.32
     },
     {
-      "distFromCmToStab": 0.1
+      "distFromCmToStab": 0.15
     },
     {
-      "CxK": 1.8
+      "CxK": 3.1
     },
     {
       "WdK": [0.1,0.1,0.1]
     },
     {
-      "finsAoaHor": 0.08
+      "finsAoaHor": 0.13
     },
     {
-      "finsAoaVer": 0.08
+      "finsAoaVer": 0.13
     },
     {
-      "force": 17619.0
+      "force": 35000.0
     },
     {
-      "timeFire": 2.1
+      "timeFire": 2.3
     },
     {
       "spawnExplosionFx": false
@@ -69,31 +69,31 @@
       "explosionEffect": "atgm_hit"
     },
     {
-      "defFxScale": [2.2,2.5]
+      "defFxScale": [1.5,1.6]
     },
     {
       "groundCollisionEffect": "art_ground_splash"
     },
     {
-      "groundFxScale": [1.5,1.7]
+      "groundFxScale": [1.3,1.5]
     },
     {
-      "ricochetEffect": "cannon_hit_apds"
+      "ricochetEffect": "cannon_ricochet"
     },
     {
       "waterCollisionEffect": "120-203_he_water_splash"
     },
     {
-      "waterFxScale": [1.2,1.4]
+      "waterFxScale": [1.1,1.2]
     },
     {
-      "explosionPatchRadius": 5.0
+      "explosionPatchRadius": 3.4
     },
     {
       "smokeEffect": "hydra_smoke_modern"
     },
     {
-      "maxDistance": 18000.0
+      "maxDistance": 16000.0
     },
     {
       "minDistance": 30.0
@@ -120,7 +120,7 @@
       "warmUpTime": 5.0
     },
     {
-      "workTime": 10.0
+      "workTime": 20.0
     },
     {
       "uncageBeforeLaunch": true
@@ -180,22 +180,22 @@
       "startSpeed": 0.0
     },
     {
-      "endSpeed": 800.0
+      "endSpeed": 1000.0
     },
     {
       "speedViscosity": 0.2
     },
     {
-      "timeLife": 20.0
+      "timeLife": 40.0
     },
     {
       "machMax": 2.5
     },
     {
-      "loadFactorMax": 10.0
+      "loadFactorMax": 16.0
     },
     {
-      "rangeMax": 18.0
+      "rangeMax": 12.0
     },
     {
       "price": 3000.0
@@ -315,35 +315,48 @@
     {
       "collisions": {
         "steel": {
-          "fx": "cannon_hit_armor_cumulative",
-          "fxScale": [4.0,5.0]
+          "fx": "atgm_hit",
+          "fxScale": [4.0,4.2]
+        },
+        "armor": {
+          "fx": "atgm_hit",
+          "fxScale": [4.0,4.2]
         },
         "buildings": {
           "fx": "atgm_hit",
-          "fxScale": [2.2,2.5]
+          "fxScale": [4.0,4.2]
         },
         "wood": {
           "fx": "atgm_hit",
-          "fxScale": [2.2,2.5]
+          "fxScale": [4.0,4.2]
         }
       }
     },
     {
       "irSeeker": {
-        "rangeBand0": 5500.0,
+        "rangeBand0": 6000.0,
         "rangeBand2": 4000.0,
         "rangeBand3": 4000.0,
-        "rangeMax": 11000.0,
-        "fov": 2.7,
-        "minAngleToSun": 10.0,
-        "lockAngleMax": 10.0,
-        "angleMax": 40.0,
+        "rangeMax": 12000.0,
+        "fov": 4.0,
+        "minAngleToSun": 3.0,
+        "lockAngleMax": 20.0,
+        "angleMax": 60.0,
         "rateMax": 12.0,
-        "prolongationTimeMax": 1.0
+        "prolongationTimeMax": 1.0,
+        "targetDesignator": true
+      }
+    },
+    {
+      "arcadeProp": {
+        "finsAoaHor": 0.15,
+        "finsAoaVer": 0.15,
+        "timeFire": 3.0
       }
     },
     {
       "propNavGuidance": {
+        "timeOut": 0.6,
         "propNavMult": 4.0,
         "accelControlProp": 2.0,
         "accelControlIntg": 0.05,
@@ -353,8 +366,38 @@
     },
     {
       "proximityFuse": {
-        "timeOut": 0.5,
-        "radius": 5.0
+        "timeOut": 1.3,
+        "radius": 12.0
+      }
+    },
+    {
+      "table0": {
+        "altitude": 0.0,
+        "fighterMach": [1.2,0.8],
+        "targetMach": [0.8,0.8],
+        "rangeMin": [600.0,1500.0,500.0,1000.0],
+        "rangeMax": [1900.0,4100.0,1300.0,1800.0],
+        "altDiff": [500.0,1200.0]
+      }
+    },
+    {
+      "table1": {
+        "altitude": 6000.0,
+        "fighterMach": [1.2,0.8],
+        "targetMach": [0.8,0.8],
+        "rangeMin": [600.0,1500.0,500.0,1000.0],
+        "rangeMax": [3200.0,6900.0,2500.0,3400.0],
+        "altDiff": [500.0,1200.0]
+      }
+    },
+    {
+      "table2": {
+        "altitude": 12000.0,
+        "fighterMach": [1.5,0.8],
+        "targetMach": [1.5,0.8],
+        "rangeMin": [1300.0,2900.0,1400.0,2700.0],
+        "rangeMax": [3800.0,8200.0,5300.0,7200.0],
+        "altDiff": [500.0,1000.0]
       }
     },
     {
